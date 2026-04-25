@@ -699,6 +699,365 @@ footer p {
     margin-bottom: 15px;
 }
 
+/* Hamburger Menu - CSS Only */
+.hamburger-toggle {
+    display: none;
+}
+
+.hamburger-label {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+    padding: 8px;
+}
+
+.hamburger-label span {
+    width: 25px;
+    height: 3px;
+    background: #FFFFFF;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.hamburger-toggle:checked ~ .hamburger-label span:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 10px);
+}
+
+.hamburger-toggle:checked ~ .hamburger-label span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-toggle:checked ~ .hamburger-label span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+}
+
+.hamburger-toggle:checked ~ .nav-links {
+    max-height: 500px;
+    border-top: 2px solid #7B8FD9;
+}
+
+/* Responsive Design - Tablet and below */
+@media (max-width: 1024px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 200px;
+    }
+    
+    .gallery img:nth-child(1) {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    
+    .gallery img:nth-child(8) {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    
+    .health-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .health-sidebar {
+        flex: 1;
+        position: static;
+        top: auto;
+    }
+}
+
+/* Responsive Design - Mobile (768px and below) */
+@media (max-width: 768px) {
+    /* Navigation */
+    .hamburger-label {
+        display: flex;
+    }
+    
+    .nav-links {
+        position: absolute;
+        top: 65px;
+        left: 0;
+        right: 0;
+        background: #0A1929;
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        list-style: none;
+    }
+    
+    .nav-links li {
+        border-bottom: 1px solid rgba(179, 201, 232, 0.2);
+        margin: 0;
+    }
+    
+    .nav-links a {
+        display: block;
+        padding: 15px 20px;
+    }
+    
+    nav {
+        position: relative;
+    }
+    
+    /* Hero Section */
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .hero {
+        padding: 80px 20px;
+        min-height: 350px;
+    }
+    
+    /* Headings */
+    h1, h2 {
+        font-size: 1.8rem;
+    }
+    
+    h3 {
+        font-size: 1rem;
+    }
+    
+    /* Grid Layout */
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Membership Plans */
+    .membership-plans {
+        flex-direction: column;
+    }
+    
+    .plan {
+        min-width: auto;
+        width: 100%;
+    }
+    
+    /* Flex Layout */
+    .flex {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .trainer-card, .member-card {
+        flex: 1 1 100%;
+        min-width: auto;
+    }
+    
+    /* Gallery */
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 150px;
+        gap: 15px;
+        margin: 15px;
+    }
+    
+    .gallery img:nth-child(1) {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    
+    .gallery img:nth-child(4) {
+        grid-column: span 1;
+    }
+    
+    .gallery img:nth-child(5) {
+        grid-row: span 1;
+    }
+    
+    .gallery img:nth-child(8) {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    
+    .gallery img:nth-child(10) {
+        grid-column: span 1;
+    }
+    
+    .gallery img:nth-child(11) {
+        grid-row: span 1;
+    }
+    
+    /* Form */
+    form {
+        padding: 25px;
+        max-width: 100%;
+    }
+    
+    /* Table */
+    table {
+        font-size: 0.85rem;
+    }
+    
+    table th, table td {
+        padding: 10px 8px;
+    }
+    
+    /* Section Padding */
+    section {
+        padding: 30px 15px;
+    }
+    
+    /* Offer Box */
+    .offer-box .number {
+        font-size: 2.5rem;
+    }
+    
+    .offer-box {
+        padding: 25px 15px;
+        min-height: 140px;
+    }
+}
+
+/* Responsive Design - Small Mobile (480px and below) */
+@media (max-width: 480px) {
+    /* Navigation */
+    header {
+        padding: 5px 0;
+    }
+    
+    nav {
+        padding: 0 10px;
+    }
+    
+    .logo {
+        font-size: 1.2rem;
+        letter-spacing: 0;
+    }
+    
+    .logo-img {
+        height: 30px;
+    }
+    
+    .nav-links {
+        top: 55px;
+    }
+    
+    /* Hero Section */
+    .hero h1 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+    
+    .hero p {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+    
+    .hero {
+        padding: 60px 15px;
+        min-height: 280px;
+    }
+    
+    .hero .btn {
+        padding: 12px 25px;
+        font-size: 0.95rem;
+    }
+    
+    /* Headings */
+    h1, h2 {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+    }
+    
+    h3 {
+        font-size: 0.95rem;
+    }
+    
+    /* Text */
+    p {
+        font-size: 0.9rem;
+    }
+    
+    /* Section */
+    section {
+        padding: 20px 10px;
+    }
+    
+    /* Buttons */
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    /* Offer Box */
+    .offer-box {
+        padding: 20px 10px;
+        min-height: 120px;
+    }
+    
+    .offer-box .number {
+        font-size: 2rem;
+    }
+    
+    .offer-box .label {
+        font-size: 0.95rem;
+    }
+    
+    /* Gallery */
+    .gallery {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 150px;
+        margin: 10px;
+    }
+    
+    .gallery img {
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
+    }
+    
+    /* Card */
+    .card {
+        padding: 20px 15px;
+    }
+    
+    /* Form */
+    form {
+        padding: 20px;
+        margin: 15px auto;
+    }
+    
+    .form-group {
+        margin-bottom: 20px;
+    }
+    
+    form input, form textarea, form select {
+        padding: 10px 12px;
+        font-size: 0.95rem;
+    }
+    
+    /* Trainer Card */
+    .trainer-card, .member-card {
+        padding: 20px 15px;
+    }
+    
+    .trainer-card img, .member-card img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    /* Video Container */
+    .video-container {
+        margin: 15px 0;
+    }
+    
+    /* Footer */
+    footer {
+        padding: 30px 15px;
+    }
+    
+    footer p {
+        font-size: 0.9rem;
+    }
+}
+
 .content-section ul li {
     margin-bottom: 10px;
     line-height: 1.6;
@@ -745,7 +1104,7 @@ footer p {
 
 .diet-card img {
     width: 100%;
-    height: 200px;
+    height: 500px;
     object-fit: cover;
 }
 
@@ -783,7 +1142,7 @@ footer p {
 
 .wellness-card img {
     width: 100%;
-    height: 200px;
+    height: 500px;
     object-fit: cover;
 }
 
@@ -834,7 +1193,6 @@ footer p {
 
 @media (max-width: 768px) {
     nav {
-        flex-direction: column;
         gap: 15px;
     }
     
