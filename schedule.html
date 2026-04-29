@@ -33,8 +33,8 @@
     <main>
         <!-- Hero Section -->
         <section class="hero about-hero">
-            <h1>📅Weekly Workout Schedule📅</h1>
-            <p>Check out our class schedule and plan your fitness routine.</p>
+            <h1>Class Schedule</h1>
+            <p>Plan your week with our diverse range of fitness classes and expert trainer sessions</p>
         </section>
         <hr style="margin-bottom: -20px;">
 
@@ -198,11 +198,15 @@
                     <div class="audio-icon"><i class="fa-solid fa-music"></i></div>
                     <div class="audio-info">
                         <h4>HIIT Blitz Warmup Core</h4>
-                        <p>Mike Johnson - 4:40 min</p>
+                        <p>Mike Johnson - 5:49 min</p>
                     </div>
                     <div class="audio-player">
-                        <div class="time-display">0:00 / 4:40</div>
-                        <div class="play-button">▶</div>
+                        <audio class="audio-element" data-audio-id="0">
+                            <source src="src/Warmup HIIT.MP3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <div class="time-display"><span class="current-time">0:00</span> / <span class="duration">0:00</span></div>
+                        <div class="play-button" data-audio-id="0">▶</div>
                     </div>
                 </div>
 
@@ -210,11 +214,15 @@
                     <div class="audio-icon"><i class="fa-solid fa-music"></i></div>
                     <div class="audio-info">
                         <h4>Yoga Flow Breathing Guide</h4>
-                        <p>Sarah Chen - 5:20 min</p>
+                        <p>Sarah Chen - 8:11 min</p>
                     </div>
                     <div class="audio-player">
-                        <div class="time-display">0:00 / 5:20</div>
-                        <div class="play-button">▶</div>
+                        <audio class="audio-element" data-audio-id="1">
+                            <source src="src/YogaBreathing.MP3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <div class="time-display"><span class="current-time">0:00</span> / <span class="duration">0:00</span></div>
+                        <div class="play-button" data-audio-id="1">▶</div>
                     </div>
                 </div>
 
@@ -222,11 +230,15 @@
                     <div class="audio-icon"><i class="fa-solid fa-music"></i></div>
                     <div class="audio-info">
                         <h4>PowerLifting Motivational</h4>
-                        <p>David Nguyen - 6:30 min</p>
+                        <p>David Nguyen - 7:12 min</p>
                     </div>
                     <div class="audio-player">
-                        <div class="time-display">0:00 / 6:30</div>
-                        <div class="play-button">▶</div>
+                        <audio class="audio-element" data-audio-id="2">
+                            <source src="src/Powerlifting.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <div class="time-display"><span class="current-time">0:00</span> / <span class="duration">0:00</span></div>
+                        <div class="play-button" data-audio-id="2">▶</div>
                     </div>
                 </div>
             </div>
@@ -399,19 +411,6 @@
             </div>
         </section>
 
-    <footer>
-        <!-- Social Media Banner -->
-        <div class="footer-social-banner">
-            <p>Get connected with us on social networks:</p>
-            <div class="social-icons">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" aria-label="Google"><i class="fab fa-google"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            </div>
-        </div>
 
 <footer>
         <!-- Social Media Banner -->
@@ -466,5 +465,60 @@
     </footer>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        // Audio player functionality
+        document.querySelectorAll('.play-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const audioId = this.dataset.audioId;
+                const audio = document.querySelector(`audio[data-audio-id="${audioId}"]`);
+                const timeDisplay = this.previousElementSibling;
+
+                if (audio.paused) {
+                    // Play the audio
+                    audio.play();
+                    this.textContent = '⏸';
+                } else {
+                    // Pause the audio
+                    audio.pause();
+                    this.textContent = '▶';
+                }
+            });
+        });
+
+        // Update time display when audio metadata loads and during playback
+        document.querySelectorAll('audio').forEach(audio => {
+            // When metadata is loaded, update duration
+            audio.addEventListener('loadedmetadata', function() {
+                const audioId = this.dataset.audioId;
+                const timeDisplay = document.querySelector(`.play-button[data-audio-id="${audioId}"]`).previousElementSibling;
+                const durationSpan = timeDisplay.querySelector('.duration');
+                durationSpan.textContent = formatTime(this.duration);
+            });
+
+            // Update current time during playback
+            audio.addEventListener('timeupdate', function() {
+                const audioId = this.dataset.audioId;
+                const timeDisplay = document.querySelector(`.play-button[data-audio-id="${audioId}"]`).previousElementSibling;
+                const currentTimeSpan = timeDisplay.querySelector('.current-time');
+                currentTimeSpan.textContent = formatTime(this.currentTime);
+            });
+
+            // Reset button when audio ends
+            audio.addEventListener('ended', function() {
+                const audioId = this.dataset.audioId;
+                const button = document.querySelector(`.play-button[data-audio-id="${audioId}"]`);
+                button.textContent = '▶';
+            });
+        });
+
+        // Helper function to format time in MM:SS format
+        function formatTime(seconds) {
+            if (isNaN(seconds)) return '0:00';
+            const minutes = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${minutes}:${secs.toString().padStart(2, '0')}`;
+        }
+    </script>
 </body>
 </html>

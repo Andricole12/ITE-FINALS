@@ -590,38 +590,82 @@ p {
     background-position: center;
     background-attachment: fixed;
     color: #FFF;
-    padding: 120px 20px;
+    padding: 140px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     box-shadow: 0 10px 30px rgba(10, 25, 41, 0.3);
+    text-align: center;
+    position: relative;
 }
 
-.home-hero { background-image: linear-gradient(rgba(10, 25, 41, 0.6), rgba(10, 25, 41, 0.6)), url(../src/background.jpg); }
-.developer-hero { background-image: linear-gradient(rgba(10, 25, 41, 0.6), rgba(10, 25, 41, 0.6)), url(../src/Developers/background.avif); }
-.about-hero { background-image: linear-gradient(rgba(10, 25, 41, 0.6), rgba(10, 25, 41, 0.6)), url(../src/background.jpg); }
-.gallery-hero { background-image: linear-gradient(rgba(10, 25, 41, 0.6), rgba(10, 25, 41, 0.6)), url(../src/gallery/background.jpg); }
-.program-hero { background-image: linear-gradient(rgba(10, 25, 41, 0.6), rgba(10, 25, 41, 0.6)), url(../src/workoutbg.jpg); }
-.trainer-hero { background-image: linear-gradient(rgba(10, 25, 41, 0.6), rgba(10, 25, 41, 0.6)), url(../src/trainer/background.avif); }
-.health-hero { background-image: linear-gradient(rgba(10, 25, 41, 0.6), rgba(10, 25, 41, 0.6)), url(../src/health/background.jpg); }
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #B3C9E8, transparent);
+    opacity: 0.8;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #B3C9E8, transparent);
+    opacity: 0.8;
+}
+
+.home-hero { background-image: linear-gradient(135deg, rgba(10, 25, 41, 0.65) 0%, rgba(123, 143, 217, 0.3) 100%), url(../src/background.jpg); }
+.developer-hero { background-image: linear-gradient(135deg, rgba(10, 25, 41, 0.65) 0%, rgba(123, 143, 217, 0.3) 100%), url(../src/Developers/background.avif); }
+.about-hero { background-image: linear-gradient(135deg, rgba(10, 25, 41, 0.65) 0%, rgba(123, 143, 217, 0.3) 100%), url(../src/background.jpg); }
+.gallery-hero { background-image: linear-gradient(135deg, rgba(10, 25, 41, 0.65) 0%, rgba(123, 143, 217, 0.3) 100%), url(../src/gallery/background.jpg); }
+.program-hero { background-image: linear-gradient(135deg, rgba(10, 25, 41, 0.65) 0%, rgba(123, 143, 217, 0.3) 100%), url(../src/workoutbg.jpg); }
+.trainer-hero { background-image: linear-gradient(135deg, rgba(10, 25, 41, 0.65) 0%, rgba(123, 143, 217, 0.3) 100%), url(../src/trainer/background.avif); }
+.health-hero { background-image: linear-gradient(135deg, rgba(10, 25, 41, 0.65) 0%, rgba(123, 143, 217, 0.3) 100%), url(../src/health/background.jpg); }
 
 .hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
-    line-height: 1.2;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    line-height: 1.1;
     color: #FFF;
+    letter-spacing: -1px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .hero p {
-    font-size: 1.3rem;
-    margin-bottom: 30px;
-    color: #FFF;
+    font-size: 1.25rem;
+    margin-bottom: 35px;
+    color: #E8EDF5;
+    font-weight: 400;
+    max-width: 700px;
+    letter-spacing: 0.3px;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 
 .hero .btn {
-    padding: 15px 40px;
-    font-size: 1.1rem;
+    padding: 14px 45px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* Offer boxes */
@@ -2070,7 +2114,9 @@ footer {
     
     /* Hero Section */
     .hero h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-weight: 800;
     }
 
     .hero p {
@@ -2078,8 +2124,13 @@ footer {
     }
     
     .hero {
-        padding: 80px 20px;
-        min-height: 350px;
+        padding: 100px 20px;
+        min-height: 380px;
+    }
+    
+    .hero::before,
+    .hero::after {
+        display: none;
     }
     
     /* Audio Track Responsive */
@@ -2289,23 +2340,26 @@ footer {
     
     /* Hero Section */
     .hero h1 {
-        font-size: 1.5rem;
-        margin-bottom: 15px;
+        font-size: 1.7rem;
+        margin-bottom: 12px;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-weight: 800;
     }
     
     .hero p {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
         margin-bottom: 20px;
     }
     
     .hero {
-        padding: 60px 15px;
-        min-height: 280px;
+        padding: 70px 15px;
+        min-height: 300px;
     }
     
     .hero .btn {
-        padding: 12px 25px;
+        padding: 12px 30px;
         font-size: 0.95rem;
+        font-weight: 600;
     }
     
     /* Headings */
