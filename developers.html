@@ -10,6 +10,12 @@
     <header>
         <nav>
             <a href="index.html"><div class="logo"><img src="src/logo.png" alt="AWE Fitness Logo" class="logo-img">AWE Fitness</div></a>
+            <input type="checkbox" id="hamburger" class="hamburger-toggle" />
+            <label for="hamburger" class="hamburger-label">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
             <ul class="nav-links">
                 <li><a href="about.html">About</a></li>
                 <li><a href="programs.html">Programs</a></li>
@@ -27,36 +33,168 @@
     <main>
         <!-- Hero Section -->
         <section class="hero developer-hero">
-            <h1>Meet the Developers</h1>
+            <h1>👨‍💻 Meet the Development Team</h1>
         </section>
         <hr>
 
-        <section class="flex">
-            <div class="member-card">
-                <img src="https://via.placeholder.com/150x150?text=Alice+Smith" alt="Alice Smith">
-                <h3>Alice Smith</h3>
-                <p><strong>Role:</strong> PORMAN</p>
-                <p>Alice is a passionate web developer with expertise in HTML, CSS, and JavaScript. She enjoys creating user-friendly interfaces and has a keen interest in fitness and wellness.</p>
-            </div>
-            <div class="member-card">
-                <img src="https://via.placeholder.com/150x150?text=Bob+Johnson" alt="Bob Johnson">
-                <h3>Bob Johnson</h3>
-                <p><strong>Role:</strong> TAGABUHOS</p>
-                <p>Bob specializes in user experience design and responsive layouts. He's an avid runner and brings his knowledge of fitness to create intuitive website designs.</p>
-            </div>
-            <div class="member-card">
-                <img src="https://via.placeholder.com/150x150?text=Carol+Williams" alt="Carol Williams">
-                <h3>Carol Williams</h3>
-                <p><strong>Role:</strong> TAGAHALO</p>
-                <p>Carol is responsible for creating engaging content about health and nutrition. She's a certified nutritionist and yoga instructor who loves helping others live healthier lives.</p>
-            </div>
-        </section>
+        <div class="developers-container">
+            <!-- Sidebar Navigation -->
+            <aside class="developers-sidebar">
+                <div class="sidebar-header">Team Members</div>
+                
+                <div class="sidebar-section">
+                    <a href="#andrei" class="sidebar-link developer-shortcut">Andrei Asi</a>
+                    <p class="shortcut-role">Frontend Developer</p>
+                </div>
 
-        <section>
-            <h2>Our Mission</h2>
-            <p>As a team, we're committed to creating a website that not only looks great but also inspires people to lead healthier lifestyles. Each team member brings unique skills and a shared passion for fitness and technology.</p>
-        </section>
-    </main>
+                <hr class="sidebar-divider">
+
+                <div class="sidebar-section">
+                    <a href="#evol" class="sidebar-link developer-shortcut">Evol Esmade</a>
+                    <p class="shortcut-role">UX Designer</p>
+                </div>
+
+                <hr class="sidebar-divider">
+
+                <div class="sidebar-section">
+                    <a href="#wilbert" class="sidebar-link developer-shortcut">Wilbert Cruz</a>
+                    <p class="shortcut-role">Content Specialist</p>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <div class="developers-content">
+                <!-- Andrei Profile -->
+                <div class="developer-profile" id="andrei">
+                    <div class="profile-header">
+                        <img src="src/Developers/andrei.jpg" alt="Andrei Asi" class="profile-image">
+                        <div class="profile-info">
+                            <h2>Andrei Asi</h2>
+                            <p class="profile-role">Frontend Developer</p>
+                            <p class="profile-tagline">Creating beautiful and responsive web experiences</p>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-details">
+                        <div class="detail-section">
+                            <h3>📋 About</h3>
+                            <p>Andrei is a passionate web developer with expertise in HTML, CSS, and JavaScript. He enjoys creating user-friendly interfaces and has a keen interest in fitness and wellness. With 5+ years of experience, he's dedicated to building accessible and performant web applications.</p>
+                        </div>
+
+                        <div class="detail-section">
+                            <h3>🎯 Specialties</h3>
+                            <ul class="skills-list">
+                                <li>HTML5 & CSS3</li>
+                                <li>JavaScript & React</li>
+                                <li>Responsive Design</li>
+                                <li>Web Accessibility</li>
+                            </ul>
+                        </div>
+
+                        <div class="detail-section">
+                            <h3>💪 Interests</h3>
+                            <p>Fitness enthusiast, yoga practitioner, and outdoor runner. Alice believes in maintaining a healthy lifestyle while building great digital products.</p>
+                        </div>
+
+                        <div class="detail-section">
+                            <h3>💪 Interests</h3>
+                            <p>Fitness enthusiast, yoga practitioner, and outdoor runner. Alice believes in maintaining a healthy lifestyle while building great digital products.</p>
+                        </div>
+
+                        <div class="profile-socials">
+                            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Dribbble"><i class="fab fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Evol Profile -->
+                <div class="developer-profile" id="evol">
+                    <div class="profile-header">
+                        <img src="src/Developers/evol.jpg" alt="Evol Esmade" class="profile-image">
+                        <div class="profile-info">
+                            <h2>Evol Esmade</h2>
+                            <p class="profile-role">UX/UI Designer</p>
+                            <p class="profile-tagline">Designing intuitive and engaging user experiences</p>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-details">
+                        <div class="detail-section">
+                            <h3>📋 About</h3>
+                            <p>Evol specializes in user experience design and responsive layouts. He's an avid runner and brings his knowledge of fitness to create intuitive website designs. His approach combines research-driven design principles with creative innovation to deliver exceptional user experiences.</p>
+                        </div>
+
+                        <div class="detail-section">
+                            <h3>🎯 Specialties</h3>
+                            <ul class="skills-list">
+                                <li>UI/UX Design</li>
+                                <li>Figma & Sketch</li>
+                                <li>User Research</li>
+                                <li>Wireframing & Prototyping</li>
+                            </ul>
+                        </div>
+
+                        <div class="detail-section">
+                            <h3>💪 Interests</h3>
+                            <p>Competitive runner, marathon enthusiast, and fitness coach. Evol uses his experience in sports to understand user needs and create designs that inspire action.</p>
+                        </div>
+
+                        <div class="profile-socials">
+                            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+                            <a href="#" aria-label="Dribbble"><i class="fab fa-facebook"></i></a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carol Profile -->
+                <div class="developer-profile" id="carol">
+                    <div class="profile-header">
+                        <img src="src/Developers/wilbert.jpg" alt="Wilbert Cruz" class="profile-image">
+                        <div class="profile-info">
+                            <h2>Wilbert Cruz</h2>
+                            <p class="profile-role">Content & Nutrition Specialist</p>
+                            <p class="profile-tagline">Creating content that inspires healthy living</p>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-details">
+                        <div class="detail-section">
+                            <h3>📋 About</h3>
+                            <p>Wilbert is responsible for creating engaging content about health and nutrition. She's a certified nutritionist and yoga instructor who loves helping others live healthier lives. With a background in wellness coaching, she brings authentic expertise to every piece of content she creates.</p>
+                        </div>
+
+                        <div class="detail-section">
+                            <h3>🎯 Specialties</h3>
+                            <ul class="skills-list">
+                                <li>Nutrition Planning</li>
+                                <li>Content Writing</li>
+                                <li>Yoga Instruction</li>
+                                <li>Wellness Coaching</li>
+                            </ul>
+                        </div>
+
+                        <div class="detail-section">
+                            <h3>💪 Certifications</h3>
+                            <p>Certified Nutritionist (ISSN), Registered Yoga Instructor (RYT-200), and Wellness Coach. Carol is committed to ongoing education in health and fitness sciences.</p>
+                        </div>
+
+                        <div class="profile-socials">
+                            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Dribbble"><i class="fab fa-facebook"></i></a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     <footer>
         <!-- Social Media Banner -->
